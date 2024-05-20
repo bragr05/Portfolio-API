@@ -10,6 +10,6 @@ const techsSchema = new Schema(
 	{ collection: "techs" }
 );
 
-const techs = model("techs", techsSchema, "techs");
+const Techs = model("techs", techsSchema, "techs");
 
-export default techs;
+export default Techs;
