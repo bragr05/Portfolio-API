@@ -2,7 +2,8 @@ import express from "express";
 const app = express();
 import {} from "../config/env.js";
 
-import MainRouter from "../router/router.js";
+import MainRouter from "../router/MainRouter.js";
+import WeatherRouter from "../router/WheaterRouter.js";
 
 app.disable("x-powered-by");
 
@@ -19,5 +20,6 @@ const authenticateToken = (req, res, next) => {
 
 app.use(authenticateToken);
 app.use(MainRouter);
+app.use(WeatherRouter);
 
 export default app;
