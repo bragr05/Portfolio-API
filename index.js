@@ -11,10 +11,9 @@ const bootstrap = async () => {
 			console.log("Connected to MongoDB Atlas");
 		});
 
-	const PORT = process.env.PORT;
-	const HOST = process.env.HOST;
+	const PORT = process.env.PORT || 3000;
 
-	server.listen(PORT, HOST, () => {
+	server.listen(PORT, () => {
 		console.log(`Server listening on http://${HOST}:${PORT}`);
 	});
 };
