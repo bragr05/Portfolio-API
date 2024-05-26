@@ -1,21 +1,8 @@
 import {} from "./src/config/env.js";
-import server from "./src/config/http.js";
-import mongoose from "mongoose";
+import app from "./src/config/express.js";
 
-const bootstrap = async () => {
-	await mongoose
-		.connect(process.env.URL_MONGODB, {
-			dbName: "portfolio",
-		})
-		.then(() => {
-			console.log("Connected to MongoDB Atlas");
-		});
+const PORT = process.env.PORT || 3000;
 
-	const PORT = process.env.PORT || 3000;
-
-	server.listen(PORT, () => {
-		console.log(`Server listening on port ${PORT}`);
-	});
-};
-
-bootstrap();
+app.listen(PORT, () => {
+	console.log(`Server listening on port ${PORT}`);
+});

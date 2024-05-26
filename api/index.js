@@ -1,3 +1,3 @@
-import bootstrap from "../index.js";
+import app from "../src/config/express.js";
 
-export default bootstrap;
+export default app;

@@ -2,8 +2,14 @@ import { Router } from "express";
 import Techs from "../models/techs.js";
 import Project from "../models/project.js";
 import Experience from "../models/experience.js";
+import connectDB from "../database/db.js";
 
 const MainRouter = Router();
+
+MainRouter.use(async (req, res, next) => {
+	await connectDB();
+	next();
+});
 
 MainRouter.get("/techs", async (req, res) => {
 	const techs = await Techs.find({
